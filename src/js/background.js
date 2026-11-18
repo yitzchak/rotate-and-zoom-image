@@ -3,62 +3,107 @@
 const messageSender = new MessageSender();
 const options = new Options();
 
-{
-    const rotateContextMenu = new ContextMenu({
-        title: browser.i18n.getMessage('rotateImage'),
-        contexts: ['image', 'link'],
-    }, messageSender);
+const ROTATE_ANGLE = 90;
+const ZOOM_AMOUNT = 25;
 
-    const rotationDegreesOptionId = 'rotation_degrees';
-    options.get(rotationDegreesOptionId).then((items) => {
-        items[rotationDegreesOptionId]
-            .sort((a,b) => {
-                if (a < 0 && b < 0) {
-                    return -(a-b);
-                } else {
-                    return (a-b);
-                }
-            })
-            .forEach((deg) => rotateContextMenu.addRotateChild(deg));
-        rotateContextMenu.addResetChild('rotate');
-    });
-}
-
-{
-    const zoomContextMenu = new ContextMenu({
-        title: browser.i18n.getMessage('zoomImage'),
-        contexts: ['image', 'link'],
-    }, messageSender);
-
-    const zoomLevelsOptionId = 'zoom_percent_levels';
-    options.get(zoomLevelsOptionId).then((items) => {
-        items[zoomLevelsOptionId]
-            .sort((a,b) => a-b)
-            .forEach((percent) => zoomContextMenu.addZoomChild(percent));
-        zoomContextMenu.addResetChild('zoom');
-    });
-}
-
-{
-    const flipContextMenu = new ContextMenu({
-        title: browser.i18n.getMessage('flipImage'),
-        contexts: ['image', 'link'],
-    }, messageSender);
-
-    ['horizontally', 'vertically'].forEach((how) => flipContextMenu.addFlipChild(how));
-    flipContextMenu.addResetChild('flip');
-}
-
-new ContextMenu({
-    title: browser.i18n.getMessage('resetAllImageTransformations'),
-    contexts: ['image', 'link'],
-    onclick: (info, tab) => {
-        messageSender.resetAllTransformations(tab);
-    },
+browser.contextMenus.create({
+  title: browser.i18n.getMessage('rotateClockwise', ROTATE_ANGLE),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/rotate-cw.svg",
+    32: "../img/rotate-cw.svg",
+    48: "../img/rotate-cw.svg",
+    96: "../img/rotate-cw.svg",
+  },
+  onclick: (info, tab) => messageSender.rotateImage(tab, ROTATE_ANGLE)
 });
 
-new ContextMenu({
-    title: browser.i18n.getMessage('openOptions', browser.i18n.getMessage('extensionName')),
-    contexts: ['image', 'link'],
-    onclick: () => browser.runtime.openOptionsPage(),
+browser.contextMenus.create({
+  title: browser.i18n.getMessage('rotateCounterclockwise', ROTATE_ANGLE),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/rotate-ccw.svg",
+    32: "../img/rotate-ccw.svg",
+    48: "../img/rotate-ccw.svg",
+    96: "../img/rotate-ccw.svg",
+  },
+  onclick: (info, tab) => messageSender.rotateImage(tab, -ROTATE_ANGLE)
+});
+
+browser.contextMenus.create({
+  id: "separator-1",
+  type: "separator",
+  contexts: ["image", "link"]
+});
+
+browser.contextMenus.create({
+  title: browser.i18n.getMessage("flipHorizontally"),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/flip-horizontal.svg",
+    32: "../img/flip-horizontal.svg",
+    48: "../img/flip-horizontal.svg",
+    96: "../img/flip-horizontal.svg",
+  },
+  onclick: (info, tab) => messageSender.flipImage(tab, "horizontally")
+});
+
+browser.contextMenus.create({
+  title: browser.i18n.getMessage("flipVertically"),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/flip-vertical.svg",
+    32: "../img/flip-vertical.svg",
+    48: "../img/flip-vertical.svg",
+    96: "../img/flip-vertical.svg",
+  },
+  onclick: (info, tab) => messageSender.flipImage(tab, "vertically")
+});
+
+browser.contextMenus.create({
+  id: "separator-2",
+  type: "separator",
+  contexts: ["image", "link"]
+});
+
+browser.contextMenus.create({
+  title: browser.i18n.getMessage('zoomIn', ZOOM_AMOUNT),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/zoom-in.svg",
+    32: "../img/zoom-in.svg",
+    48: "../img/zoom-in.svg",
+    96: "../img/zoom-in.svg",
+  },
+  onclick: (info, tab) => messageSender.zoomImage(tab, 100+ZOOM_AMOUNT)
+});
+
+browser.contextMenus.create({
+  title: browser.i18n.getMessage('zoomOut', ZOOM_AMOUNT),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/zoom-out.svg",
+    32: "../img/zoom-out.svg",
+    48: "../img/zoom-out.svg",
+    96: "../img/zoom-out.svg",
+  },
+  onclick: (info, tab) => messageSender.zoomImage(tab, 10000/(100+ZOOM_AMOUNT))
+});
+
+browser.contextMenus.create({
+  id: "separator-3",
+  type: "separator",
+  contexts: ["image", "link"]
+});
+
+browser.contextMenus.create({
+  title: browser.i18n.getMessage("resetAll"),
+  contexts: ["image", "link"],
+  icons: {
+    16: "../img/rollback.svg",
+    32: "../img/rollback.svg",
+    48: "../img/rollback.svg",
+    96: "../img/rollback.svg",
+  },
+  onclick: (info, tab) => messageSender.resetAllTransformations(tab)
 });

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+  <style>
+    .icon { stroke: #1e1e1e; }
+    @media (prefers-color-scheme: dark) {
+      .icon { stroke: #d5d5d5; }
+    }
+  </style>
+  <path class="icon" d="M12 3.25L12 5.75M12 8.25L12 10.75M12 13.25L12 15.75M12 18.25L12 20.75"/>
+  <path class="icon" d="M9 8.575L9 15.425Q9 16.625 7.8 16.625L4.2 16.625Q3 16.625 3.65 15.615L8.35 8.385Q9 7.375 9 8.575Z"/>
+  <path class="icon" d="M15 8.575L15 15.425Q15 16.625 16.2 16.625L19.8 16.625Q21 16.625 20.35 15.615L15.65 8.385Q15 7.375 15 8.575Z"/>
+</svg>
