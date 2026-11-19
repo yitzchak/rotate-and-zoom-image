@@ -71,8 +71,8 @@
     "message": "Flip Vertically",
     "description": "Context menu for flipping the image vertically (upside down)."
   },
-  "resetAll": {
-    "message": "Reset all",
+  "reset": {
+    "message": "Reset",
     "description": "Context menu entry to reset all image transformations."
   }
 }

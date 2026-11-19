@@ -11,9 +11,7 @@
   "version": "3.0",
   "author": "Tarn W. Burton",
   "icons": {
-    "16": "img/rotate-photo.svg",
-    "48": "img/rotate-photo.svg",
-    "128": "img/rotate-photo.svg"
+    "16": "img/rotate-photo.svg"
   },
   "default_locale": "en",
   "permissions": [

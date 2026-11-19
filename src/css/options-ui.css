@@ -1,3 +1,23 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --border: #cccccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #252428;
+    --text: #f2f0f8;
+    --border: #3a3a52;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
 #transformation_animation_duration {
   max-width: 5em;
 }
