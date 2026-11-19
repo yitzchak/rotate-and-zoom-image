@@ -1,11 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
-  <style>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 24 24"
+   fill="none"
+   stroke-width="1.35"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="rotate-photo.svg"
+   inkscape:export-filename="/home/yitzi/rotate-photo.png"
+   inkscape:export-xdpi="384"
+   inkscape:export-ydpi="384"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="38.65625"
+     inkscape:cx="16"
+     inkscape:cy="16"
+     inkscape:window-width="2560"
+     inkscape:window-height="1523"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <style
+     id="style1">
     .icon { stroke: #1e1e1e; }
     @media (prefers-color-scheme: dark) {
       .icon { stroke: #d5d5d5; }
     }
   </style>
-  <rect class="icon" x="2.75" y="9.25" width="12" height="12" rx="2"/>
-  <path class="icon" d="M2.75 18.25l3.5-3.5 4.25 4.25M9.5 18l1.5-1.5 3.75 3.75"/>
-  <path class="icon" d="M12.75 3.75a6.25 6.25 0 0 1 6.25 6.25v2.25M16.75 10 19 12.25 21.25 10"/>
+  <rect
+     class="icon"
+     x="2.75"
+     y="9.25"
+     width="12"
+     height="12"
+     rx="2"
+     id="rect1" />
+  <path
+     id="path5"
+     class="icon"
+     d="M 9.5 18 L 11 16.5 L 14.574219 20.074219 "
+     style="fill:none" />
+  <path
+     id="path4"
+     class="icon"
+     d="M 2.75 18.25 L 6.25 14.75 L 10.5 19 "
+     style="fill:none" />
+  <path
+     class="icon"
+     d="M12.75 3.75a6.25 6.25 0 0 1 6.25 6.25v2.25M16.75 10 19 12.25 21.25 10"
+     id="path2" />
 </svg>
