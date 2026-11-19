@@ -1,7 +1,7 @@
 {
   "applications": {
     "gecko": {
-      "id": "tranform-image@yitzchak",
+      "id": "tranform-image@yitzchak.github.io",
       "strict_min_version": "68.0"
     }
   },
@@ -10,6 +10,14 @@
   "description": "__MSG_extensionDescription__",
   "version": "3.0",
   "author": "Tarn W. Burton",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tranform-image@yitzchak.github.io",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
   "icons": {
     "16": "img/rotate-photo.svg"
   },
